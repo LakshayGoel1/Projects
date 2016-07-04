@@ -1,0 +1,58 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Mon Jun 13 2016 17:03:10 
+		GMT+0530 (India Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="testng-results">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reporter-output"></xs:element>
+				<xs:element name="suite">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="groups"></xs:element>
+							<xs:element name="test">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="class">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="test-method">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="reporter-output"></xs:element>
+															</xs:sequence>
+															<xs:attribute name="status" type="xs:string"></xs:attribute>
+															<xs:attribute name="signature" type="xs:string"></xs:attribute>
+															<xs:attribute name="name" type="xs:string"></xs:attribute>
+															<xs:attribute name="duration-ms" type="xs:int"></xs:attribute>
+															<xs:attribute name="started-at" type="xs:dateTime"></xs:attribute>
+															<xs:attribute name="finished-at" type="xs:dateTime"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="name" type="xs:string"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="name" type="xs:string"></xs:attribute>
+									<xs:attribute name="duration-ms" type="xs:int"></xs:attribute>
+									<xs:attribute name="started-at" type="xs:dateTime"></xs:attribute>
+									<xs:attribute name="finished-at" type="xs:dateTime"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string"></xs:attribute>
+						<xs:attribute name="duration-ms" type="xs:int"></xs:attribute>
+						<xs:attribute name="started-at" type="xs:dateTime"></xs:attribute>
+						<xs:attribute name="finished-at" type="xs:dateTime"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="skipped" type="xs:int"></xs:attribute>
+			<xs:attribute name="failed" type="xs:int"></xs:attribute>
+			<xs:attribute name="total" type="xs:int"></xs:attribute>
+			<xs:attribute name="passed" type="xs:int"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

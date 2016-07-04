@@ -1,0 +1,182 @@
+package com.mycompany.pro;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.testng.*;
+import org.testng.annotations.*;
+
+/**
+ * Unit test for simple App.
+ */
+
+public class CalculatorTestNGTest {
+
+	public CalculatorTestNGTest() {
+	}
+
+	int number1 = 80, number2 = 40;
+	
+	@Test
+	public void testAddition() throws IOException {
+		File file1 = new File("C:/Users/lgoel/Desktop/HTMLfiles/Placeholder0.html");
+		System.out.println("Hi");
+		InputStream inputStream1 = new FileInputStream(file1);
+		System.out.println(inputStream1);
+		StringBuilder builder1 = new StringBuilder();
+		int ptr2 = 0;
+		while ((ptr2 = inputStream1.read()) != -1) {
+			builder1.append((char) ptr2);
+		}
+
+		String htmlString1 = builder1.toString();
+		System.out.println(htmlString1);
+
+		inputStream1.close();
+	
+		Document html1 = Jsoup.parse(htmlString1);
+		Element testSteps = html1.select("table").select("tr").get(1).select("td").get(3);
+		System.out.println(testSteps);
+		testSteps.html("1. Going to add two numbers "+number1+" and "+number2+".<br>");
+		Calculator2 c = new Calculator2();
+		int result = c.Addition(number1, number2);
+		Assert.assertEquals(120, result);
+		testSteps.append("2.Checking whether correct or not.<br>");
+		if(result==120)
+			testSteps.append("3. Result is "+result+" that is correct.<br>4.PASSED");
+		else
+			testSteps.append("3. Result is "+result+" that is wrong<br>.4.FAILED<br>");
+		testSteps.append("Executed completely.");
+		String copyHtml1 = html1.toString();
+		// Write Content
+		FileWriter writer1 = new FileWriter(file1);
+		writer1.write(copyHtml1);
+		writer1.close();
+	}
+
+	@Test
+	public void testSubtraction() throws IOException {
+		File file3 = new File("C:/Users/lgoel/Desktop/HTMLfiles/Placeholder3.html");
+		System.out.println("Hi");
+		InputStream inputStream3 = new FileInputStream(file3);
+		System.out.println(inputStream3);
+		StringBuilder builder3 = new StringBuilder();
+		int ptr2 = 0;
+		while ((ptr2 = inputStream3.read()) != -1) {
+			builder3.append((char) ptr2);
+		}
+
+		String htmlString1 = builder3.toString();
+		System.out.println(htmlString1);
+
+		inputStream3.close();
+	
+		Document html3 = Jsoup.parse(htmlString1);
+		Element testSteps3 = html3.select("table").select("tr").get(1).select("td").get(3);
+		System.out.println(testSteps3);
+		testSteps3.html("1. Going to multiply two numbers "+number1+" and "+number2+".<br>");
+		Calculator2 c3 = new Calculator2();
+		int result = c3.Subtraction(number1, number2);
+		Assert.assertEquals(3200, result);
+		testSteps3.append("2.Checking whether correct or not.<br>");
+		if(result==40)
+			testSteps3.append("3. Result is "+result+" that is correct.<br>4.PASSED.<br>");
+		else
+			testSteps3.append("3. Result is "+result+" that is wrong<br>.4.FAILED<br>");
+		testSteps3.append("Executed completely.");
+		String copyHtml3 = html3.toString();
+		// Write Content
+		FileWriter writer3 = new FileWriter(file3);
+		writer3.write(copyHtml3);
+		writer3.close();
+	}
+
+		@Test
+		public void testDivision() throws IOException {
+			File file1 = new File("C:/Users/lgoel/Desktop/HTMLfiles/Placeholder1.html");
+			System.out.println("Hi");
+			InputStream inputStream1 = new FileInputStream(file1);
+			System.out.println(inputStream1);
+			StringBuilder builder1 = new StringBuilder();
+			int ptr2 = 0;
+			while ((ptr2 = inputStream1.read()) != -1) {
+				builder1.append((char) ptr2);
+			}
+
+			String htmlString1 = builder1.toString();
+			System.out.println(htmlString1);
+
+			inputStream1.close();
+		
+			Document html1 = Jsoup.parse(htmlString1);
+			Element testSteps = html1.select("table").select("tr").get(1).select("td").get(3);
+			System.out.println(testSteps);
+			testSteps.html("1. Going to divide two numbers "+number1+" and "+number2+".<br>");
+			Calculator2 c = new Calculator2();
+			int result = c.Division(number1, number2);
+			Assert.assertEquals(2, result);
+			testSteps.append("2.Checking whether correct or not.<br>");
+			if(result==120)
+				testSteps.append("3. Result is "+result+" that is correct.<br>");
+			else
+				testSteps.append("3. Result is "+result+" that is wrong<br>.4.Failed<br>");
+			testSteps.append("Executed completely.");
+			String copyHtml1 = html1.toString();
+			// Write Content
+			FileWriter writer1 = new FileWriter(file1);
+			writer1.write(copyHtml1);
+			writer1.close();
+			/*Calculator2 c2 = new Calculator2();
+			int result3 = c2.Division(number1, number2);
+			Assert.assertEquals(2, result3);*/
+		}
+		
+			@Test
+			public void testMultiplication() throws IOException {
+				File file2 = new File("C:/Users/lgoel/Desktop/HTMLfiles/Placeholder2.html");
+				System.out.println("Hi");
+				InputStream inputStream2 = new FileInputStream(file2);
+				System.out.println(inputStream2);
+				StringBuilder builder2 = new StringBuilder();
+				int ptr2 = 0;
+				while ((ptr2 = inputStream2.read()) != -1) {
+					builder2.append((char) ptr2);
+				}
+
+				String htmlString1 = builder2.toString();
+				System.out.println(htmlString1);
+
+				inputStream2.close();
+			
+				Document html2 = Jsoup.parse(htmlString1);
+				Element testSteps2 = html2.select("table").select("tr").get(1).select("td").get(3);
+				System.out.println(testSteps2);
+				testSteps2.html("1. Going to multiply two numbers "+number1+" and "+number2+".<br>");
+				Calculator2 c2 = new Calculator2();
+				int result = c2.Multiplication(number1, number2);
+				Assert.assertEquals(3200, result);
+				testSteps2.append("2.Checking whether correct or not.<br>");
+				if(result==3200)
+					testSteps2.append("3. Result is "+result+" that is correct.<br>4.PASSED.<br>");
+				else
+					testSteps2.append("3. Result is "+result+" that is wrong<br>.4.FAILED<br>");
+				testSteps2.append("Executed completely.");
+				String copyHtml2 = html2.toString();
+				// Write Content
+				FileWriter writer2 = new FileWriter(file2);
+				writer2.write(copyHtml2);
+				writer2.close();
+				/*Calculator2 c2 = new Calculator2();
+				int result4 = c2.Multiplication(number1, number2);
+				Assert.assertEquals(3200, result4);*/
+	}
+			
+
+}

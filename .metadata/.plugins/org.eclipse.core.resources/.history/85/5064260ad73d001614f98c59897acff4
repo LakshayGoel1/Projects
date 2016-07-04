@@ -1,0 +1,43 @@
+package com.mycompany.FirstWebDriverProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class TestWebDriver {
+
+	@Test
+	public void startWebDriver(){
+    //System.setProperty("webdriver.chrome.driver","C:/Users/lgoel/Downloads/chromedriver.exe");
+	WebDriver driver = new FirefoxDriver();
+	/*driver.get("http://seleniumsimplified.com");
+	//Assert.assertTrue(driver.get("http://google.com"));
+	Assert.assertTrue(driver.getTitle().startsWith("Selenium Simplified"),"title should start differently");
+   // driver.close();*/
+	String baseUrl = "http://newtours.demoaut.com";
+    String expectedTitle = "Welcome: Mercury Tours";
+    String actualTitle = "";
+
+    // launch Firefox and direct it to the Base URL
+    driver.get(baseUrl);
+
+    // get the actual value of the title
+    actualTitle = driver.getTitle();
+
+    /*
+     * compare the actual title of the page witht the expected one and print
+     * the result as "Passed" or "Failed"
+     */
+    if (actualTitle.contentEquals(expectedTitle)){
+        System.out.println("Test Passed!");
+    } else {
+        System.out.println("Test Failed");
+    }
+   
+    //close Firefox
+    driver.close();
+}
+}

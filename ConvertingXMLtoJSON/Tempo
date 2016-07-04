@@ -1,0 +1,61 @@
+{"testng-results": 
+{
+    "failed": 0,
+ 
+   "passed": 1,
+  
+  "reporter-output": "",
+
+    "skipped": 0,
+    
+"suite":
+ {
+        "duration-ms": 83343,
+
+        "finished-at": "2016-05-30T09:13:30Z",
+ 
+       "groups": "",
+    
+    "name": "Default suite",
+
+        "started-at": "2016-05-30T09:12:07Z",
+
+        "test": {
+ 
+           "class": {
+ 
+               "name": "com.mycompany.FirstWebDriverProject.TestWebDriver",
+ 
+               "test-method": {
+   
+                 "duration-ms": 83265,
+  
+                  "finished-at": "2016-05-30T04:13:30Z",
+ 
+                   "name": "startWebDriver",
+ 
+                   "reporter-output": "",
+ 
+                   "signature": "startWebDriver()[pri:0, instance:com.mycompany.FirstWebDriverProject.TestWebDriver@1c7cbad]",
+ 
+                   "started-at": "2016-05-30T04:12:07Z",
+       
+             "status": "PASS"
+                }
+ 
+           },
+ 
+           "duration-ms": 83343,
+
+            "finished-at": "2016-05-30T09:13:30Z",
+ 
+           "name": "Default test",
+  
+          "started-at": "2016-05-30T09:12:07Z"
+        }
+ 
+   },
+ 
+   "total": 1
+}
+}

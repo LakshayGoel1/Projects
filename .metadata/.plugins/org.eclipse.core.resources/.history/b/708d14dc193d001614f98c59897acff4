@@ -1,0 +1,46 @@
+package com.mycompany.tests;
+
+import org.testng.*;
+import org.testng.annotations.*;
+
+/**
+ * Unit test for simple App.
+ */
+
+public class CalculatorTestNGTest {
+
+	public CalculatorTestNGTest() {
+	}
+
+	int number1 = 80, number2 = 40;
+
+	@Test
+	public void testAddition() {
+		Calculator2 c = new Calculator2();
+		int result = c.Addition(number1, number2);
+		Assert.assertEquals(120, result);
+	}
+
+	@Test
+	public void testSubtraction() {
+		Calculator2 c2 = new Calculator2();
+		int result2 = c2.Subtraction(number1, number2);
+		Assert.assertEquals(30, result2);
+	}
+
+		@Test
+		public void testDivision() {
+			Calculator2 c2 = new Calculator2();
+			int result3 = c2.Division(number1, number2);
+			Assert.assertEquals(2, result3);
+		}
+		
+			@Test
+			public void testMultiplication() {
+				Calculator2 c2 = new Calculator2();
+				int result4 = c2.Multiplication(number1, number2);
+				Assert.assertEquals(3200, result4);
+	}
+			
+
+}
